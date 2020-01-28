@@ -1,27 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listado de usuarios - Styde.net</title>
-</head>
-<body>
-    <h1>{{ $title }}</h1>
-
-    <hr>
-
-    @if(! empty($users))
-        <ul>
-            @foreach ($users as $user)
-                <li>{{ $user }} </li>
-            @endforeach
-        </ul>
-    @else
-        <p>No hay usuarios registrados</p>
-    @endif
+@include('header')
+    <div class="row mt-5">
+      <div class="col-8">
+        <h1>{{ $title }}</h1>
 
 
-</body>
-</html>
+        @if(! empty($users))
+            <ul>
+                @foreach ($users as $user)
+                    <li>{{ $user }} </li>
+                @endforeach
+            </ul>
+        @else
+            <p>No hay usuarios registrados</p>
+        @endif
+    </div>
+        @include('sidebar')
+    </div>
+@include('footer')
